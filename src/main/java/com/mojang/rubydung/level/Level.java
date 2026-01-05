@@ -17,7 +17,9 @@ public class Level {
     private byte[] blocks;
     private int[] lightDepths;
     private ArrayList<LevelListener> levelListeners = new ArrayList<>();
-    private String saveName = "level.dat";
+    private static String saveFolder = "saves/";
+    private static String saveName = "level.dat";
+    private static String savePath = saveFolder + saveName;
 
     public Level(int w, int h, int d) {
         this.width = w;
@@ -40,10 +42,10 @@ public class Level {
     }
 
     public void load() {
-        if (!new File(saveName).exists()) return;
+        if (!new File(savePath).exists()) return;
 
         try {
-            DataInputStream dis = new DataInputStream(new GZIPInputStream(new FileInputStream(new File(saveName))));
+            DataInputStream dis = new DataInputStream(new GZIPInputStream(new FileInputStream(new File(savePath))));
             dis.readFully(this.blocks);
             this.calcLightDepths(0, 0, this.width, this.height);
 
@@ -58,8 +60,10 @@ public class Level {
     }
 
     public void save() {
+        File folder = new File(saveFolder);
+        if (!new File(saveFolder).exists()) folder.mkdirs();
         try {
-            DataOutputStream dos = new DataOutputStream(new GZIPOutputStream(new FileOutputStream(new File("level.dat"))));
+            DataOutputStream dos = new DataOutputStream(new GZIPOutputStream(new FileOutputStream(new File(savePath))));
             dos.write(this.blocks);
             dos.close();
         } catch (Exception var2) {

@@ -25,6 +25,9 @@ replay_pid*
 
 /.idea
 *.iml
+.gradle
 
 /out
-*.dat
+/build
+
+/saves
