@@ -3,6 +3,7 @@ package com.mojang.rubydung.level;
 public class Tile {
    public static Tile rock = new Tile(0);
    public static Tile grass = new Tile(1);
+   public static Tile plank = new Tile(2);
    private int tex = 0;
 
    private Tile(int tex) {

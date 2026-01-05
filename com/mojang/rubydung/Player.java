@@ -43,8 +43,8 @@ public class Player {
    }
 
    public void turn(float xo, float yo) {
-      this.yRot = (float)(this.yRot + xo * 0.15);
-      this.xRot = (float)(this.xRot - yo * 0.15);
+      this.yRot = (float)(this.yRot + xo * 0.05);
+      this.xRot = (float)(this.xRot - yo * 0.05);
       if (this.xRot < -90.0F) {
          this.xRot = -90.0F;
       }

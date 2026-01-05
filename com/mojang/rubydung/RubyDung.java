@@ -89,7 +89,7 @@ public class RubyDung implements Runnable {
             frames++;
 
             while (System.currentTimeMillis() >= lastTime + 1000L) {
-               System.out.println(frames + " fps, " + Chunk.updates);
+               //System.out.println(frames + " fps, " + Chunk.updates);
                Chunk.updates = 0;
                lastTime += 1000L;
                frames = 0;
@@ -184,11 +184,11 @@ public class RubyDung implements Runnable {
       this.pick(a);
 
       while (Mouse.next()) {
-         if (Mouse.getEventButton() == 1 && Mouse.getEventButtonState() && this.hitResult != null) {
+         if (Mouse.getEventButton() == 0 && Mouse.getEventButtonState() && this.hitResult != null) {
             this.level.setTile(this.hitResult.x, this.hitResult.y, this.hitResult.z, 0);
          }
 
-         if (Mouse.getEventButton() == 0 && Mouse.getEventButtonState() && this.hitResult != null) {
+         if (Mouse.getEventButton() == 1 && Mouse.getEventButtonState() && this.hitResult != null) {
             int x = this.hitResult.x;
             int y = this.hitResult.y;
             int z = this.hitResult.z;
