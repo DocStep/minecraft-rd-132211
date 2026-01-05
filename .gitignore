@@ -23,11 +23,14 @@
 hs_err_pid*
 replay_pid*
 
-/.idea
+.idea/
 *.iml
 .gradle
 
-/out
-/build
+!libs/*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+out/
+build/
 
 /saves
