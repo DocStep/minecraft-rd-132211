@@ -11,8 +11,8 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.lwjgl', name: 'lwjgl', version: '2.9.0'
-    implementation group: 'org.lwjgl', name: 'lwjgl_util', version: '2.9.0'
+    implementation name: 'lwjgl'
+    implementation name: 'lwjgl_util'
 }
 
 // Include your assets in the JAR
